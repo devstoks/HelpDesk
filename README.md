@@ -16,6 +16,40 @@ Organizar o fluxo de atendimento técnico por meio de **tickets**, permitindo qu
 
 > Projeto desenvolvido como parte do módulo de **Java EE** da **Step**, com ênfase em arquitetura web, persistência de dados e fluxos corporativos.
 
+
+
+# Screenshots
+
+## Tela Inicial
+![Tela Inicial](assets/index.png)
+
+## Login
+![Login](assets/login.png)
+
+## Registro
+![Registro](assets/register.png)
+
+## Registro Completo
+![Registro Completo](assets/register2.png)
+
+## Dashboard
+![Dashboard](assets/dashboard.png)
+
+## Tickets
+![Tickets](assets/Tickets.png)
+
+## Detalhes do Ticket
+![Detalhes](assets/detalhes.png)
+
+## Gestão de Equipes
+![Teams](assets/teams.png)
+
+## Entrada em Equipe
+![Team Join](assets/teamJoin.png)
+
+
+
+
 ---
 
 ## 🧰 Stack Utilizada
@@ -134,6 +168,7 @@ O projeto utiliza **Hibernate** como ferramenta de **ORM** (Object Relational Ma
 
 ## 📁 Estrutura do Projeto
 
+```text
 src/
  ├── control/
  ├── model/
@@ -145,6 +180,7 @@ webapp/
  ├── JS/
  ├── WEB-INF/
  └── páginas JSP
+```
 
 
 ---
@@ -179,6 +215,21 @@ Este projeto permitiu aprofundar conhecimentos em:
 - Organização de sistemas corporativos
 
 ---
+
+## ▶️ Como Executar
+
+### Pré-requisitos
+- Java JDK 8+
+- Apache Tomcat
+- MariaDB
+- Eclipse IDE
+
+### Passos
+1. Clone o repositório
+2. Configure o banco MariaDB
+3. Importe o projeto no Eclipse
+4. Configure o Apache Tomcat
+5. Execute o projeto no servidor
 
 ## 👨‍💻 Autor
 
