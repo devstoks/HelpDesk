@@ -1,0 +1,215 @@
+/* ================= HEADER ================= */
+.top-header {
+	position: fixed;
+	top: 0;
+	left: 260px;
+	width: calc(100% - 260px);
+	height: 80px;
+	background: rgba(15, 23, 42, 0.95);
+	backdrop-filter: blur(12px);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 40px;
+	z-index: 100;
+}
+
+.header-left h2 {
+	color: white;
+	font-size: 24px;
+	margin-bottom: 4px;
+}
+
+.header-left span {
+	color: #94a3b8;
+	font-size: 14px;
+}
+
+.header-right {
+	display: flex;
+	align-items: center;
+	gap: 25px;
+}
+
+.header-search input {
+	width: 260px;
+	padding: 12px 16px;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	background: #111827;
+	color: white;
+	border-radius: 12px;
+	outline: none;
+}
+
+.user-area {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.user-avatar {
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	background: linear-gradient(135deg, #3b82f6, #2563eb);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	color: white;
+}
+
+.user-info {
+	display: flex;
+	flex-direction: column;
+}
+
+.user-info strong {
+	color: white;
+	font-size: 14px;
+}
+
+.user-info span {
+	color: #94a3b8;
+	font-size: 12px;
+}
+
+/* ================= MAIN ================= */
+main {
+	margin-top: 100px;
+	padding-bottom: 120px;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+	margin-left: 260px;
+	background: #0f172a;
+	border-top: 1px solid rgba(255, 255, 255, 0.06);
+	padding: 40px;
+}
+
+.footer-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+
+.footer-brand h3 {
+	color: white;
+	margin-bottom: 10px;
+}
+
+.footer-brand p {
+	color: #94a3b8;
+	max-width: 400px;
+	line-height: 1.6;
+}
+
+.footer-links {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+.footer-links a {
+	color: #94a3b8;
+	text-decoration: none;
+	transition: 0.2s;
+}
+
+.footer-links a:hover {
+	color: white;
+}
+
+.footer-bottom {
+	margin-top: 30px;
+	padding-top: 20px;
+	border-top: 1px solid rgba(255, 255, 255, 0.06);
+	color: #64748b;
+	font-size: 14px;
+}
+
+/* ===== RESET & BASE ===== */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+	background: linear-gradient(135deg, #0f172a 0%, #0a0f1c 50%, #05070f 100%);
+	margin: 0;
+	min-height: 70vh;
+}
+
+/* ===== SIDEBAR MODERNA ===== */
+.sidebar {
+	width: 260px;
+	height: 100vh;
+	background: rgba(30, 41, 59, 0.95);
+	backdrop-filter: blur(10px);
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	padding-top: 30px;
+	border-right: 1px solid rgba(255, 255, 255, 0.08);
+	z-index: 10;
+	box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* LOGO */
+.logo {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.logo h1 {
+	font-size: 1.5rem;
+	background: linear-gradient(135deg, #fff, #38bdf8);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-weight: 700;
+}
+
+/* MENU */
+.menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.menu li {
+	margin: 4px 12px;
+}
+
+.menu a {
+	display: block;
+	padding: 12px 20px;
+	color: #e2e8f0;
+	text-decoration: none;
+	border-radius: 12px;
+	transition: all 0.25s ease;
+	font-weight: 500;
+	font-size: 14px;
+}
+
+/* HOVER - azul bem claro e vibrante */
+.menu a:hover {
+	background: rgba(56, 189, 248, 0.15); /* azul claro #38bdf8 */
+	color: #7dd3fc; /* azul bem clarinho */
+	transform: translateX(4px);
+}
+
+/* OPÇÃO ATIVA - azul claro mais forte */
+.menu a.active {
+	background: rgba(56, 189, 248, 0.2);
+	color: #7dd3fc;
+	border-left: 3px solid #38bdf8;
+}

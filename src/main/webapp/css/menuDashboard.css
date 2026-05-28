@@ -1,0 +1,717 @@
+@charset "UTF-8";
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: rgb(25, 25, 33);
+	margin: 0;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+.welcome-title {
+	color: white;
+	margin: 0;
+	font-size: 34px;
+}
+
+.welcome-subtitle {
+	color: #9f9fad;
+	margin-top: 8px;
+	font-size: 14px;
+}
+
+/* =========================================================
+   BOTÃO
+========================================================= */
+.open-modal-btn {
+	padding: 14px 24px;
+	border: none;
+	border-radius: 12px;
+	background: linear-gradient(135deg, #2d89ef, #1f6fd1);
+	color: white;
+	cursor: pointer;
+	font-size: 15px;
+	font-weight: 600;
+	transition: 0.2s ease;
+}
+
+.open-modal-btn:hover {
+	transform: translateY(-2px);
+	opacity: 0.95;
+}
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+#modal-overlay {
+	display: none;
+	position: fixed;
+	inset: 0;
+	background: rgba(5, 8, 15, 0.82);
+	backdrop-filter: blur(10px);
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+	padding: 30px;
+	box-sizing: border-box;
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+#modal-ticket {
+	width: 1100px;
+	max-width: 100%;
+	max-height: 92vh;
+	overflow-y: auto;
+	position: relative;
+	padding: 38px;
+	border-radius: 30px;
+	box-sizing: border-box;
+	background: linear-gradient(180deg, rgba(36, 44, 66, 0.96),
+		rgba(18, 22, 34, 0.98));
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), inset 0 1px 0
+		rgba(255, 255, 255, 0.04);
+	animation: modalFadeIn 0.25s ease;
+}
+
+/* BRILHO SUPERIOR */
+#modal-ticket::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 140px;
+	background: linear-gradient(180deg, rgba(59, 130, 246, 0.12),
+		transparent);
+	border-radius: 30px 30px 0 0;
+	pointer-events: none;
+}
+
+@keyframes modalFadeIn {from { opacity:0;
+	transform: translateY(12px) scale(0.98);
+}
+
+to {
+	opacity: 1;
+	transform: translateY(0) scale(1);
+}
+
+}
+
+/* =========================================================
+   SCROLL
+========================================================= */
+#modal-ticket::-webkit-scrollbar {
+	width: 6px;
+}
+
+#modal-ticket::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.03);
+}
+
+#modal-ticket::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.15);
+	border-radius: 20px;
+}
+
+/* =========================================================
+   BOTÃO FECHAR
+========================================================= */
+.close-btn {
+	position: absolute;
+	top: 22px;
+	right: 22px;
+	width: 42px;
+	height: 42px;
+	border-radius: 14px;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	background: rgba(255, 255, 255, 0.04);
+	color: white;
+	font-size: 22px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 0.2s ease;
+	z-index: 5;
+}
+
+.close-btn:hover {
+	background: rgba(255, 255, 255, 0.10);
+	transform: scale(1.05);
+}
+
+/* =========================================================
+   HEADER MODAL
+========================================================= */
+.modal-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 20px;
+	margin-bottom: 35px;
+	position: relative;
+	z-index: 2;
+}
+
+.modal-header h2 {
+	margin: 0;
+	font-size: 2.1rem;
+	font-weight: 800;
+	letter-spacing: -1px;
+	color: white;
+}
+
+.modal-header p {
+	margin-top: 10px;
+	max-width: 600px;
+	color: #9ca3af;
+	font-size: 14px;
+	line-height: 1.7;
+}
+
+.modal-status {
+	display: flex;
+	align-items: center;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+.status-badge {
+	padding: 10px 16px;
+	border-radius: 999px;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+
+.status-open {
+	background: rgba(59, 130, 246, 0.16);
+	border: 1px solid rgba(59, 130, 246, 0.35);
+	color: #60a5fa;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+#display-ticket {
+	display: flex;
+	flex-direction: column;
+	gap: 22px;
+}
+
+/* =========================================================
+   ROWS
+========================================================= */
+.modal-row {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 18px;
+}
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+.field-group {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 18px;
+	border-radius: 22px;
+	background: rgba(255, 255, 255, 0.03);
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	transition: 0.2s ease;
+}
+
+.field-group:hover {
+	border-color: rgba(255, 255, 255, 0.10);
+	background: rgba(255, 255, 255, 0.045);
+}
+
+/* TÍTULO E DESCRIÇÃO */
+.field-full {
+	grid-column: 1/-1;
+	padding: 24px;
+}
+
+/* =========================================================
+   LABELS
+========================================================= */
+.field-group label {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: #dbe3f0;
+	font-size: 12px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.label-icon {
+	font-size: 15px;
+}
+
+/* =========================================================
+   INPUTS
+========================================================= */
+.modal-input, .modal-textarea {
+	width: 100%;
+	border: none;
+	outline: none;
+	padding: 15px 16px;
+	border-radius: 16px;
+	background: rgba(0, 0, 0, 0.25);
+	color: white;
+	font-size: 14px;
+	font-family: inherit;
+	box-sizing: border-box;
+	border: 1px solid transparent;
+	transition: 0.2s ease;
+}
+
+.modal-input:hover, .modal-textarea:hover {
+	background: rgba(0, 0, 0, 0.35);
+}
+
+.modal-input:focus, .modal-textarea:focus {
+	border-color: #3b82f6;
+	background: rgba(0, 0, 0, 0.45);
+	box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+.modal-input::placeholder, .modal-textarea::placeholder {
+	color: #6b7280;
+}
+
+/* =========================================================
+   SELECT
+========================================================= */
+select.modal-input {
+	appearance: none;
+	cursor: pointer;
+	background-image:
+		url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+	background-repeat: no-repeat;
+	background-position: right 14px center;
+}
+
+select.modal-input option {
+	background: #1e293b;
+	color: white;
+}
+
+/* =========================================================
+   INPUT TÍTULO
+========================================================= */
+#titulo {
+	font-size: 15px;
+	font-weight: 600;
+}
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+.modal-textarea {
+	min-height: 180px;
+	resize: vertical;
+	line-height: 1.7;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.modal-footer {
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+	padding-top: 28px;
+	border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.modal-info {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.info-brand {
+	color: #e5e7eb;
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.modal-info small {
+	color: #6b7280;
+	font-size: 11px;
+	line-height: 1.5;
+}
+
+/* =========================================================
+   BOTÃO FORM
+========================================================= */
+.form-btn {
+	border: none;
+	cursor: pointer;
+	padding: 16px 28px;
+	border-radius: 18px;
+	font-size: 14px;
+	font-weight: 700;
+	color: white;
+	background: linear-gradient(135deg, #3b82f6, #2563eb);
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	transition: 0.2s ease;
+	box-shadow: 0 10px 30px rgba(37, 99, 235, 0.35);
+}
+
+.form-btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 14px 35px rgba(37, 99, 235, 0.45);
+}
+
+.form-btn:active {
+	transform: translateY(0);
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+.main-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-left: 240px;
+	padding: 40px;
+}
+
+/* =========================================================
+   CARDS
+========================================================= */
+.dashboard-cards {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 25px;
+	margin-top: 50px;
+	margin-left: 240px;
+	flex-wrap: wrap;
+}
+
+.dashboard-cards div {
+	width: 240px;
+	height: 130px;
+	background: linear-gradient(145deg, #252533, #1e1e29);
+	border-radius: 18px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+	transition: 0.2s ease;
+}
+
+.dashboard-cards div:hover {
+	transform: translateY(-4px);
+}
+
+.dashboard-cards div span {
+	color: #9f9fad;
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+
+.dashboard-cards div strong {
+	color: white;
+	font-size: 34px;
+}
+
+/* =========================================================
+   TITULO
+========================================================= */
+.section-title {
+	color: white;
+	margin-left: 300px;
+	margin-top: 60px;
+	margin-bottom: 25px;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+/* =========================================================
+   WRAPPER
+========================================================= */
+.tickets-wrapper {
+	margin-left: 300px;
+	display: flex;
+	gap: 18px;
+	padding-right: 40px;
+	flex-wrap: nowrap;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+.ticket-card {
+	width: 250px;
+	min-height: 260px;
+	background-color: #1d1d2b;
+	border-radius: 18px;
+	padding: 18px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+	border: 1px solid rgba(255, 255, 255, 0.03);
+	transition: 0.2s ease;
+	overflow: hidden;
+}
+
+.ticket-card:hover {
+	transform: translateY(-3px);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================================
+   TOP
+========================================================= */
+.ticket-top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.ticket-code {
+	color: #66667c;
+	font-size: 11px;
+	font-weight: 700;
+}
+
+/* =========================================================
+   TAGS
+========================================================= */
+.ticket-tags {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.ticket-tags span {
+	font-size: 10px;
+	padding: 5px 10px;
+	border-radius: 20px;
+	font-weight: 700;
+}
+
+.tag-category {
+	background-color: rgba(255, 80, 80, 0.15);
+	color: #ff6b6b;
+}
+
+.tag-priority {
+	background-color: rgba(100, 80, 255, 0.15);
+	color: #9f8cff;
+}
+
+/* =========================================================
+   BODY
+========================================================= */
+.ticket-body {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-height: 0;
+}
+
+.ticket-body h3 {
+	color: white;
+	font-size: 16px;
+	margin: 0 0 12px 0;
+	line-height: 1.4;
+}
+
+.ticket-body p {
+	font-size: 13px;
+	color: #9f9fad;
+	line-height: 1.6;
+	margin: 0;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	word-break: break-word;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.ticket-info {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 18px;
+	padding-top: 14px;
+	border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-box {
+	display: flex;
+	flex-direction: column;
+}
+
+.info-box small {
+	color: #777;
+	font-size: 10px;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+}
+
+.info-box span {
+	color: white;
+	font-size: 11px;
+	font-weight: 600;
+}
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+@media ( max-width : 900px) {
+	.modal-row {
+		grid-template-columns: 1fr;
+	}
+	#modal-ticket {
+		padding: 24px;
+		border-radius: 24px;
+	}
+	.modal-header {
+		flex-direction: column;
+	}
+	.modal-footer {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.form-btn {
+		justify-content: center;
+	}
+}
+
+@media ( max-width : 768px) {
+	.main-content {
+		margin-left: 0;
+		padding: 20px;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+	}
+	.dashboard-cards {
+		margin-left: 0;
+	}
+	.section-title {
+		margin-left: 20px;
+	}
+	.tickets-wrapper {
+		margin-left: 20px;
+		flex-wrap: wrap;
+	}
+}
+
+/* =========================================================
+   ESTADOS DE VALIDAÇÃO
+========================================================= */
+.input-error {
+	border: 1px solid rgba(239, 68, 68, 0.8) !important;
+	box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.12) !important;
+}
+
+.input-success {
+	border: 1px solid rgba(34, 197, 94, 0.7) !important;
+	box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.10) !important;
+}
+
+/* mensagem de erro */
+.error-message {
+	color: #ef4444;
+	font-size: 11px;
+	margin-top: 6px;
+	min-height: 14px;
+	transition: 0.2s ease;
+}
+
+/* melhora visual do campo quando erro acontece */
+.field-group {
+	position: relative;
+}
+
+.form-btn:disabled {
+	opacity: 0.4;
+	cursor: not-allowed;
+	transform: none !important;
+	box-shadow: none !important;
+	background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+
+
+
+/* =========================================================================== remover depois ========================================================= */
+
+/* ================= DEV SWITCH MODAL ================= */
+.dev-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    pointer-events: none; /* não bloqueia UI toda */
+}
+
+/* container dos botões */
+.dev-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    pointer-events: auto;
+}
+
+/* botões circulares pequenos */
+.dev-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.25);
+    cursor: pointer;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+
+    transition: .2s;
+}
+
+/* efeito hover */
+.dev-btn:hover {
+    transform: scale(1.08);
+    background: rgba(59,130,246,0.35);
+}
+
+/* cores diferentes pra distinguir */
+.dev-btn-1 {
+    border-color: rgba(59,130,246,0.5);
+}
+
+.dev-btn-2 {
+    border-color: rgba(16,185,129,0.5);
+}

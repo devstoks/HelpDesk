@@ -1,0 +1,236 @@
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #14213D, #000000);
+
+    padding: 40px;
+}
+
+/* CARD */
+.container {
+    width: 900px;
+    max-width: 100%;
+
+    background: white;
+
+    padding: 35px;
+    border-radius: 20px;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h2 {
+    color: #14213D;
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: #666;
+}
+
+.header a {
+    color: #FCA311;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* PROGRESS */
+.progress-container {
+    margin-bottom: 35px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+
+    background: #ddd;
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-bottom: 20px;
+}
+
+.progress-fill {
+    width: 33%;
+    height: 100%;
+
+    background: #FCA311;
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+}
+
+.progress-step {
+    text-align: center;
+    color: #999;
+}
+
+.progress-step.active {
+    color: #14213D;
+}
+
+.step-circle {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #ddd;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto 8px;
+
+    font-weight: bold;
+}
+
+.progress-step.active .step-circle {
+    background: #FCA311;
+    color: white;
+}
+
+/* FORM */
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.form-step h3 {
+    margin-bottom: 25px;
+    color: #14213D;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+/* LABEL */
+label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #14213D;
+}
+
+/* INPUT */
+input,
+select {
+    height: 48px;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    padding: 0 12px;
+
+    background: #E5E5E5;
+
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #FCA311;
+    background: white;
+}
+
+/* BUTTONS */
+.buttons {
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+button {
+    height: 48px;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 0 25px;
+
+    cursor: pointer;
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.btn-primary,
+.submit {
+    background: #FCA311;
+    color: black;
+}
+
+.btn-secondary {
+    background: #eee;
+    color: #333;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+
+    .container {
+        padding: 25px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: span 1;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}
