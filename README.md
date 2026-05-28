@@ -16,40 +16,6 @@ Organizar o fluxo de atendimento técnico por meio de **tickets**, permitindo qu
 
 > Projeto desenvolvido como parte do módulo de **Java EE** da **Step**, com ênfase em arquitetura web, persistência de dados e fluxos corporativos.
 
-
-
-# Screenshots
-
-## Tela Inicial
-![Tela Inicial](assets/index.png)
-
-## Login
-![Login](assets/login.png)
-
-## Registro
-![Registro](assets/register.png)
-
-## Registro Completo
-![Registro Completo](assets/register2.png)
-
-## Dashboard
-![Dashboard](assets/dashboard.png)
-
-## Tickets
-![Tickets](assets/Tickets.png)
-
-## Detalhes do Ticket
-![Detalhes](assets/detalhes.png)
-
-## Gestão de Equipes
-![Teams](assets/teams.png)
-
-## Entrada em Equipe
-![Team Join](assets/teamJoin.png)
-
-
-
-
 ---
 
 ## 🧰 Stack Utilizada
@@ -239,3 +205,35 @@ Projeto desenvolvido para fins acadêmicos e evolução profissional em desenvol
 ---
 
 ⭐ *Se gostou do projeto, deixe uma estrela no repositório!*  
+
+
+
+# Screenshots
+
+## Tela Inicial
+![Tela Inicial](assets/index.png)
+
+## Login
+![Login](assets/login.png)
+
+## Registro
+![Registro](assets/register.png)
+
+## Registro Completo
+![Registro Completo](assets/register2.png)
+
+## Dashboard
+![Dashboard](assets/dashboard.png)
+
+## Tickets
+![Tickets](assets/Tickets.png)
+
+## Detalhes do Ticket
+![Detalhes](assets/detalhes.png)
+
+## Gestão de Equipes
+![Teams](assets/teams.png)
+
+## Entrada em Equipe
+![Team Join](assets/teamJoin.png)
+
